@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Brand from "../Brand/Brand";
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
@@ -12,9 +13,16 @@ export default function Layout({ children }) {
         <Brand />
         <NavBar />
       </div>
-      <CategoryBar /> {/* Añade CategoryBar aquí */}
-      <main className="main-container">{children}</main>
+      <CategoryBar />
+      <main className="main-container">
+        {/* Aquí se renderizan los `children`, que en este caso son las rutas */}
+        {children}
+      </main>
       <Footer />
     </div>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
