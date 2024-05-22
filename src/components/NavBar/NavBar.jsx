@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CategoryList from '../CategoryList/CategoryList'; 
-import CategoryListMobile from '../CategoryListMobile/CategoryListMobile'; 
 import CartWidget from "../CartWidget/CartWidget";
 import './NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
