@@ -1,0 +1,47 @@
+.header-wrapper {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color:#012B65;
+  }
+  
+  .brand-logo {
+    width: 180px;
+    height: auto; 
+  }
+  
+  .category-list {
+    display: flex;
+    flex-wrap: wrap; 
+    list-style: none; 
+    gap: 20px; 
+    padding-right: 90px;
+    margin-top: 22px; 
+  
+  }
+  
+  .category-list li a {
+    text-decoration: none; 
+    font-weight: 800; 
+    color: #ffffff; 
+    transition: all 0.3s; 
+  }
+  
+  .category-list li a:hover {
+    color: #00cc66; 
+    transform: scale(1.09); 
+    border-bottom: 2px solid #00cc66; 
+    opacity: 0.9; 
+  }
+  .login-button {
+    background-color: #00cc66; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: -30px; 
+    margin-left: 10px;
+  }
+  

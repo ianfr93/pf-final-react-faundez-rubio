@@ -1,0 +1,50 @@
+/* Estilos generales */
+body {
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden; 
+    font-family: 'Lato', sans-serif; 
+}
+
+/* Layout */
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    overflow-x: hidden; 
+}
+
+/* Main */
+.main-container {
+    flex: 1; 
+    width: 100%; 
+}
+
+/* Footer */
+footer {
+    flex: 0 0 auto; 
+    font-family: 'Lato', sans-serif; 
+    font-weight: 400;
+}
+
+/* Estilos de tipografía para encabezados */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif; 
+    font-weight: 700;
+}
+
+/* Estilos de tipografía para spans */
+span {
+    font-family: 'Lato', sans-serif; 
+    font-weight: 600;
+}
+
+/* Estilos de tipografía para párrafos */
+p {
+    font-family: 'Lato', sans-serif; 
+    font-weight: 400;
+}
+li a{
+    font-family: 'Lato', sans-serif; 
+    font-weight: 400;
+}

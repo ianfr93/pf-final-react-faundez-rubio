@@ -1,0 +1,36 @@
+/* CartWidget.css */
+
+.cart--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+margin-right: 10px;
+ 
+  }
+  
+  /* Estilos para el ícono del carrito */
+  .cart--icon {
+    margin-right: 0.9rem;
+  }
+  
+  /* Estilos para el contador de ítems en el carrito */
+  .cart--count {
+    background-color: #ff0000; 
+    color: #ffffff; 
+    font-size: 14px; 
+    padding: 4px 8px; 
+    border-radius: 50%; 
+    position: absolute; 
+    top: -8px; 
+    right: 0px; 
+  }
+  @media screen and (max-width: 576px) {
+    /* Media query para resolución móvil */
+    .cart--container {
+        margin-right: 150px; /* Ajusta el margen derecho para separar del logo en resolución móvil */
+        margin-top: -10px;
+        margin-bottom: 40px;
+    }
+}

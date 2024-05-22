@@ -1,0 +1,18 @@
+.brand-container {
+   border-color: transparent;
+    display: flex; 
+    align-items: center; 
+    padding: 10px; 
+    height: 100%; 
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  .brand-logo {
+    width: 100px;
+    height: auto;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+
+

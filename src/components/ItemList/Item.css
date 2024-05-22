@@ -1,0 +1,86 @@
+.item__container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: #fff;
+    flex-basis: calc(25% - 40px); 
+    box-sizing: border-box;
+    max-width: calc(25% - 40px); 
+    padding: 20px; 
+    margin: 0 20px 30px; 
+    border: 2.5px solid transparent; 
+}
+
+
+
+/* Agrega efecto al pasar el mouse sobre la tarjeta */
+.item__container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    border-color: #012b65; 
+    transform: scale(1.05); 
+}
+
+.item--img_container {
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+
+.item--img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item--title {
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.item--description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.item--price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.item--cart__button {
+    display: block;
+    width: calc(100% - 40px); 
+    margin: 20px auto 0;
+    padding: 15px 0; 
+    background-color: #012b65;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.item--cart__button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+    .item__container {
+        flex-basis: calc(50% - 20px); /* Para pantallas más pequeñas, cambia el ancho del elemento a 50% menos 20px de margen */
+        max-width: calc(50% - 20px); /* Establece el ancho máximo también */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .item__container {
+        flex-basis: calc(100% - 20px); /* Para teléfonos móviles, cambia el ancho del elemento a 100% menos 20px de margen */
+        max-width: calc(100% - 20px); /* Establece el ancho máximo también */
+    }
+}
