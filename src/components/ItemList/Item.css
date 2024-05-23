@@ -71,16 +71,38 @@
     background-color: #0056b3;
 }
 
-@media screen and (max-width: 768px) {
+/* Estilos para tablets grandes */
+@media screen and (max-width: 1200px) {
     .item__container {
-        flex-basis: calc(50% - 20px); /* Para pantallas más pequeñas, cambia el ancho del elemento a 50% menos 20px de margen */
-        max-width: calc(50% - 20px); /* Establece el ancho máximo también */
+      flex-basis: calc(33.33% - 40px); /* 3 tarjetas en tablets grandes */
+      max-width: calc(33.33% - 40px);
     }
-}
+  }
+  
+  /* Estilos para tablets pequeñas y móviles grandes */
+  @media screen and (max-width: 768px) {
+    .item__container {
+      flex-basis: calc(50% - 40px); /* 2 tarjetas en tablets pequeñas y móviles grandes */
+      max-width: calc(50% - 40px);
+    }
 
-@media screen and (max-width: 576px) {
+    .item--cart__button {
+        width: 100%;
+        font-size: 13px;
+      }
+  }
+  
+  /* Estilos para móviles pequeños */
+  @media screen and (max-width: 576px) {
     .item__container {
-        flex-basis: calc(100% - 20px); /* Para teléfonos móviles, cambia el ancho del elemento a 100% menos 20px de margen */
-        max-width: calc(100% - 20px); /* Establece el ancho máximo también */
+      flex-basis: calc(100% - 40px); /* 1 tarjeta en móviles pequeños */
+      max-width: calc(100% - 40px);
     }
-}
+  
+    .item--cart__button {
+      width: 100%;
+      font-size: 10px;
+    }
+
+   
+  }

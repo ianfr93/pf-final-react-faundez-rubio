@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { List, ListItem, ListItemText } from "@mui/material";
-import "./CategoryList.css";
 
 function CategoryList() {
   return (

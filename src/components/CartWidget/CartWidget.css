@@ -29,8 +29,11 @@ margin-right: 10px;
   @media screen and (max-width: 576px) {
     /* Media query para resolución móvil */
     .cart--container {
-        margin-right: 150px; /* Ajusta el margen derecho para separar del logo en resolución móvil */
-        margin-top: -10px;
+        margin-right: 10px; /* Ajusta el margen derecho para separar del logo en resolución móvil */
+        margin-top: 0px;
         margin-bottom: 40px;
     }
 }
+
+
+
