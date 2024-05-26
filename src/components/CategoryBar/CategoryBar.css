@@ -13,7 +13,7 @@
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   box-sizing: border-box;
 }
 
@@ -51,22 +51,23 @@
   padding: 0;
   width: 100%;
   box-sizing: border-box;
-  gap: 3px;
+  gap: 15px;
 }
 
 .category-list li {
-  margin: 1px 10px;
+  margin: 5px 15px;
 }
 
 .category-list a {
   display: flex;
   align-items: center;
-  padding: 2px 10px;
-  border-radius: 5px;
+  padding: 10px 15px;
+  border-radius: 10px;
   transition: all 0.3s ease;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
+  background-color: transparent; 
 }
 
 .category-list a:hover {
@@ -79,5 +80,6 @@
 }
 
 .category-list a svg {
-  margin-right: 8px;
+  margin-right: 10px;
+  font-size: 1.2em; 
 }

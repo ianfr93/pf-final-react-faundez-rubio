@@ -1,4 +1,16 @@
+.navbar-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .navbar-button svg {
+    margin-right: 4px;
+  }
+
+
 /* Mobile styles */
+
 @media screen and (max-width: 768px) {
     .navbar__wrapper {
       flex-direction: column;

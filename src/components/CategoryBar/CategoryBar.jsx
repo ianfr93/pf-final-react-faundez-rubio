@@ -12,7 +12,7 @@ const categoryIcons = {
   'tablets': faTabletAlt,
   'camaras': faCamera,
   'audio': faHeadphones,
-  'smartwatches': faClock, // Cambio de faWatch a faClock
+  'smartwatches': faClock, 
   'componentes': faMicrochip,
   'impresoras': faPrint,
   'routers': faNetworkWired,
