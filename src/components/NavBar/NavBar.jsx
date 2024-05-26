@@ -8,12 +8,22 @@ import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg
 import { AppBar, Toolbar, IconButton, Drawer, Box, Button, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Brand from '../Brand/Brand';
+import AuthModal from '../AuthModal/AuthModal';
 
 function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
+  };
+
+  const handleAuthModalOpen = () => {
+    setAuthModalOpen(true);
+  };
+
+  const handleAuthModalClose = () => {
+    setAuthModalOpen(false);
   };
 
   const navButtonStyles = {
@@ -53,7 +63,7 @@ function NavBar() {
             <Button sx={navButtonStyles} color="inherit" component={Link} to="/about">About</Button>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }}>
-            <Button color="inherit" component={Link} to="/login" sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Button color="inherit" onClick={handleAuthModalOpen} sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <FontAwesomeIcon icon={faUser} />
               <span>Ingresar</span>
             </Button>
@@ -80,6 +90,7 @@ function NavBar() {
           </Box>
         </Box>
       </Drawer>
+      <AuthModal open={authModalOpen} handleClose={handleAuthModalClose} />
     </div>
   );
 }
