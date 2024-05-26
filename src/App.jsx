@@ -5,6 +5,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import SearchResults from "./components/SearchResults/SearchResults";
 import useProducts from "./hooks/useProducts";
+import ImageCarousel from "./components/ImageCarousel/ImageCarousel"; // Importa el componente carrusel
 
 function App() {
   const { products, isLoading } = useProducts();
@@ -14,6 +15,7 @@ function App() {
   return (
     <Router>
       <Layout>
+        <ImageCarousel /> {/* Agrega el carrusel aquí */}
         <Routes>
           <Route path="/" element={<ItemListContainer saludo="¡Bienvenido a nuestra tienda!" products={products} />} />
           <Route path="/category/:id" element={<ItemListContainer saludo="¡Bienvenido a nuestra tienda!" products={products} />} />

@@ -7,13 +7,16 @@ function ImageCarousel() {
   return (
     <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
       <div>
-        <img src="https://via.placeholder.com/1500x500?text=Banner+1" alt="Banner 1" />
+        <img src="/src/assets/Banner-1.jpg" alt="Banner 1" />
       </div>
       <div>
-        <img src="https://via.placeholder.com/1500x500?text=Banner+2" alt="Banner 2" />
+        <img src="/src/assets/banner-2.jpg" alt="Banner 2" />
       </div>
       <div>
-        <img src="https://via.placeholder.com/1500x500?text=Banner+3" alt="Banner 3" />
+        <img src="/src/assets/Banner-3.jpg" alt="Banner 3" />
+      </div>
+      <div>
+        <img src="/src/assets/Banner-4.jpg" alt="Banner 4" />
       </div>
     </Carousel>
   );

@@ -1,8 +1,9 @@
+/* ImageCarousel.css */
 .carousel .slide img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 .carousel .control-arrow, .carousel.carousel-slider .control-arrow {
@@ -13,9 +14,33 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .carousel .control-arrow:hover, .carousel.carousel-slider .control-arrow:hover {
   opacity: 1;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel .control-dots {
+  bottom: 15px;
+}
+
+.carousel .control-dots .dot {
+  background: #fff;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.carousel .control-dots .dot.selected {
+  opacity: 1;
+  background: #28A745;
 }
