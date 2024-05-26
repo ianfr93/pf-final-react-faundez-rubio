@@ -17,9 +17,8 @@
 }
 
 .item-detail-breadcrumbs {
-  font-size: 14px;
   color: #666;
-  margin-bottom: 10px;
+  font-size: 14px;
 }
 
 .item-detail-content {
@@ -31,19 +30,37 @@
 }
 
 .item-detail-image-gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
   max-width: 500px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .item-detail__image {
   width: 100%;
-  max-width: 500px;
   height: auto;
   object-fit: contain;
-  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.image-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover {
+  border-color: #28a745;
 }
 
 .item-detail-info {
@@ -55,14 +72,17 @@
   margin: 10px;
 }
 
-.item-detail-ratings {
+.item-detail-info p {
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-.item-detail-info p {
-  font-size: 18px;
+.item-detail-ratings {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
+  font-size: 18px;
+  color: #28a745;
 }
 
 .item-detail__button {
@@ -87,15 +107,18 @@
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
-  font-size: 16px;
 }
 
 .item-detail-social {
   display: flex;
   align-items: center;
-  gap: 10px;
   margin-top: 20px;
-  font-size: 16px;
+  gap: 20px;
+  color: #28a745;
+}
+
+.item-detail-social span {
+  margin-right: 10px;
 }
 
 .medios-de-pago {
@@ -109,13 +132,9 @@
 }
 
 .item-detail-extra-info, .item-detail-related-products {
+  margin-top: 40px;
   width: 100%;
-  margin-top: 20px;
-}
-
-.item-detail-extra-info h3, .item-detail-related-products h3 {
   text-align: center;
-  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 768px) {
