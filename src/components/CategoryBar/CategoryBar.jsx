@@ -1,7 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getProducts } from '../../mock/asyncMock'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLaptop, faMobileAlt, faGamepad, faTabletAlt, faCamera, faHeadphones, faClock, faKeyboard, faPrint, faNetworkWired, faMicrochip, faHome } from '@fortawesome/free-solid-svg-icons';
 import './CategoryBar.css';
+
+const categoryIcons = {
+  'computacion': faLaptop,
+  'telefonia': faMobileAlt,
+  'gaming': faGamepad,
+  'tablets': faTabletAlt,
+  'camaras': faCamera,
+  'audio': faHeadphones,
+  'smartwatches': faClock, // Cambio de faWatch a faClock
+  'componentes': faMicrochip,
+  'impresoras': faPrint,
+  'routers': faNetworkWired,
+  'almacenamiento': faKeyboard,
+  'redes': faNetworkWired,
+  'hogar': faHome,
+};
 
 const CategoryBar = () => {
   const [categories, setCategories] = useState([]);
@@ -40,11 +58,15 @@ const CategoryBar = () => {
       </div>
       <ul className="category-list">
         <li>
-          <Link to="/">Todos los productos</Link>
+          <Link to="/">
+            <FontAwesomeIcon icon={faHome} /> Todos los productos
+          </Link>
         </li>
         {categories.map(category => (
           <li key={category}>
-            <Link to={`/category/${category}`}>{category}</Link>
+            <Link to={`/category/${category}`}>
+              <FontAwesomeIcon icon={categoryIcons[category]} /> {category}
+            </Link>
           </li>
         ))}
       </ul>
