@@ -1,0 +1,19 @@
+.close-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.green-button {
+  background-color: #28A745;
+  color: white;
+}
+
+.green-button:hover {
+  background-color: #1E7A36;
+}
+
+.auth-modal-box {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  border-radius: 10px;
+}
