@@ -1,19 +1,21 @@
-.close-icon {
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.green-button {
-  background-color: #28A745;
-  color: white;
-}
-
-.green-button:hover {
-  background-color: #1E7A36;
-}
-
-.auth-modal-box {
-  background: rgba(0, 0, 0, 0.75);
-  padding: 20px;
+.carousel .slide img {
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
+}
+
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+  opacity: 0.75;
+  z-index: 2;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel .control-arrow:hover, .carousel.carousel-slider .control-arrow:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
 }
