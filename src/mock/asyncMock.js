@@ -10,7 +10,7 @@ const productos = [
   },
   {
     id: 2,
-    titulo: "Smartphone Samsung Galaxy S20 Ultra",
+    titulo: "Smartphone Samsung Galaxy S20 Ultra,(reacondicionado)",
     precio: 350000,
     descripcion: "Teléfono inteligente con cámara de 108MP, pantalla Dynamic AMOLED de 6.9 pulgadas y 5G.",
     imagen: "https://falabella.scene7.com/is/image/Falabella/gsc_118683455_2178377_1?wid=1500&hei=1500&qlt=70",
@@ -19,7 +19,7 @@ const productos = [
   },
   {
     id: 3,
-    titulo: "Monitor Gaming ASUS ROG Swift PG279Q",
+    titulo: "Monitor Gaming ASUS ROG Swift PG279Q, Modelo 2024",
     precio: 450000,
     descripcion: "Monitor de gaming de 27 pulgadas con resolución WQHD, tecnología G-SYNC y frecuencia de actualización de 144Hz.",
     imagen: "https://falabella.scene7.com/is/image/Falabella/gsc_126709213_4661325_1?wid=1500&hei=1500&qlt=70",
@@ -28,9 +28,9 @@ const productos = [
   },
   {
     id: 4, 
-    titulo: "Tablet Apple iPad Pro año (2021)",
+    titulo: "Tablet Apple iPad Pro 512GB, 8 Ram Año (2022)",
     precio: 250000,
-    descripcion: "Tablet con pantalla Liquid Retina XDR de 12.9 pulgadas, chip M1 y soporte para Apple Pencil de segunda generación, lo último del mercado.",
+    descripcion: "Tablet con pantalla Liquid Retina XDR de 12.9 pulgadas, chip M1 y soporte para Apple Pencil de segunda generación.",
     imagen: "https://falabella.scene7.com/is/image/Falabella/16627330_01?wid=1500&hei=1500&qlt=70",
     stock: 20,
     categoria: "tablets"
@@ -73,7 +73,7 @@ const productos = [
   },
   {
     id: 9,
-    titulo: "Impresora 3D Creality Ender 3 V2 año 2024",
+    titulo: "Impresora 3D Creality Ender 3 Nueva version V2 año 2024",
     precio: 159000,
     descripcion: "Impresora 3D de sobremesa con volumen de impresión de 220 x 220 x 250 mm, pantalla táctil y función de recuperación de fallos de energía.",
     imagen: "https://falabella.scene7.com/is/image/Falabella/gsc_124794917_4105613_1?wid=1500&hei=1500&qlt=70",
@@ -91,7 +91,7 @@ const productos = [
   },
   {
     id: 11,
-    titulo: "Tarjeta Gráfica NVIDIA GeForce RTX 4070",
+    titulo: "Tarjeta Gráfica NVIDIA GeForce RTX 4070 Modelo 2024",
     precio: 839990,
     descripcion: "Tarjeta gráfica de última generación con arquitectura Ampere, 10 GB de memoria GDDR6X y soporte para trazado de rayos en tiempo real.",
     imagen: "https://falabella.scene7.com/is/image/Falabella/gsc_122963800_3493748_1?wid=1500&hei=1500&qlt=70",
@@ -100,7 +100,7 @@ const productos = [
   },
   {
     id: 12,
-    titulo: "Parlantes Logitech Pc Notebook Usb 2.0 S150",
+    titulo: "Parlantes Logitech Pc Notebook Usb 2.0 S150 Nuevo Modelo",
     precio: 16980,
     descripcion: "Sistema de altavoces 5.1 con sonido envolvente THX, 500 vatios de potencia y múltiples opciones de conexión, lo mejor del mercado.",
     imagen: "https://falabella.scene7.com/is/image/Falabella/gsc_110718619_181965_1?wid=1500&hei=1500&qlt=70",
@@ -154,25 +154,25 @@ const productos = [
   },
   {
     id: 18,
-    titulo: "Robot Aspirador iRobot Roomba i7+ modelo 2024",
+    titulo: "Robot Aspirador iRobot Roomba i7+ Alexa Nuevo modelo Año 2024",
     precio: 799990,
-    descripcion: "Robot aspirador con tecnología de navegación vSLAM, base de autovaciado y compatibilidad con asistentes de voz, lo mejor del mercado al mejor precio, producto premiado.",
+    descripcion: "Robot aspirador con tecnología de navegación vSLAM, base de autovaciado y compatibilidad con asistentes de voz Integra (AI), lo mejor del mercado al mejor precio, producto premiado Mejor del año.",
     imagen: "https://falabella.scene7.com/is/image/Falabella/gsc_126560127_4601945_1?wid=1500&hei=1500&qlt=70",
     stock: 5,
     categoria: "hogar"
   },
   {
     id: 19,
-    titulo: "Webcam Logitech C920 HD Pro modelo 2024",
+    titulo: "Webcam Logitech C920 HD Pro + Nueva modelo Actualizado 2024, (1080p)",
     precio: 83990,
-    descripcion: "Cámara web Full HD con enfoque automático, corrección de luz automática y micrófonos duales integrados, lo mejor del mercado, producto premiado y aclamado por la crítica.",
+    descripcion: "Cámara web Full HD con enfoque automático alta definicion, corrección de luz automática y micrófonos duales integrados, lo mejor del mercado, producto premiado y aclamado.",
     imagen: "https://falabella.scene7.com/is/image/Falabella/gsc_114165274_907134_1?wid=1500&hei=1500&qlt=70",
     stock: 10,
     categoria: "camaras"
   },
   {
     id: 20,
-    titulo: "Teclado Razer Huntsman V2 Switch Red Ingles - Crazygames",
+    titulo: "Teclado Razer Huntsman V2 Switch Red Ingles - Crazygames Modelo 2024",
     precio:  229900,
     descripcion: "Teclado mecánico con switches óptico-mecánicos, retroiluminación RGB personalizable y reposamuñecas magnético, lo mejor del mercado, premiado por los profesionales.",
     imagen: "https://falabella.scene7.com/is/image/Falabella/gsc_119960209_2540248_1?wid=1500&hei=1500&qlt=70",
