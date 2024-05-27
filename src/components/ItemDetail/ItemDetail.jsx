@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faTruck, faUndo, faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { CartContext } from '../../context/CartContext'; 
 
 function ItemDetail({ product }) {
+  const { addToCart } = useContext(CartContext); 
   const [count, setCount] = useState(1);
   const [selectedImage, setSelectedImage] = useState(product.imagen);
 
@@ -14,7 +16,7 @@ function ItemDetail({ product }) {
   }
 
   const handleAddToCart = () => {
-    console.log("Agregado al carrito:", product, "Cantidad:", count);
+    addToCart({ ...product, quantity: count });
   };
 
   const handleCountChange = (newCount) => {
@@ -100,7 +102,6 @@ function ItemDetail({ product }) {
               <td>Color</td>
               <td>{product.color}</td>
             </tr>
-            {/* Añadir más especificaciones según sea necesario */}
           </tbody>
         </table>
       </div>

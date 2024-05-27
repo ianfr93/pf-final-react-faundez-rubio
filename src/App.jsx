@@ -5,7 +5,8 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import SearchResults from "./components/SearchResults/SearchResults";
 import useProducts from "./hooks/useProducts";
-import ImageCarousel from "./components/ImageCarousel/ImageCarousel"; // Importa el componente carrusel
+import ImageCarousel from "./components/ImageCarousel/ImageCarousel"; 
+import { CartProvider } from './context/CartContext'; 
 
 function App() {
   const { products, isLoading } = useProducts();
@@ -29,7 +30,9 @@ function App() {
 function AppWrapper() {
   return (
     <Router>
-      <App />
+      <CartProvider> {/* Envuelve tu aplicación con CartProvider */}
+        <App />
+      </CartProvider>
     </Router>
   );
 }
