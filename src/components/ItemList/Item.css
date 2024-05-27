@@ -99,13 +99,28 @@
   /* Estilos para móviles pequeños */
   @media screen and (max-width: 576px) {
     .item__container {
-      flex-basis: calc(100% - 40px);
-      max-width: calc(100% - 40px);
+      flex-basis: calc(100% - 20px); 
+      max-width: calc(100% - 20px); 
+      padding: 10px; 
+      margin: 10px 0; 
+    }
+  
+    .item--title {
+      font-size: 14px; 
+    }
+  
+    .item--description {
+      font-size: 12px; 
+    }
+  
+    .item--price {
+      font-size: 14px; 
     }
   
     .item--cart__button {
       width: auto;
-      font-size: 10px;
+      font-size: 12px; 
+      padding: 8px 10px; 
     }
   }
   
