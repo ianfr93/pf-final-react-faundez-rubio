@@ -15,6 +15,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_129114842_5468651_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_129114842_5468651_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_129114842_5468651_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_129114842_5468651_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -33,6 +35,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_118683455_2178377_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_118683455_2178377_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_118683455_2178377_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_118683455_2178377_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -51,6 +55,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_126709213_4661325_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_126709213_4661325_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_126709213_4661325_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_126709213_4661325_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -69,6 +75,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/16627330_01?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/16627330_02?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/16627330_03?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/16627330_04?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -87,6 +95,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_113237325_582965_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_113237325_582965_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_113237325_582965_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_113237325_582965_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -105,6 +115,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/16957308_2?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/16957308_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/16957308_4?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/16957308_5?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -123,6 +135,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_123313623_3638547_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_123313623_3638547_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_123313623_3638547_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_123313623_3638547_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -141,6 +155,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_129112712_5467021_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_129112712_5467021_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_129112712_5467021_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_129112712_5467021_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -159,6 +175,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_124794917_4105613_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_124794917_4105613_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_124794917_4105613_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_124794917_4105613_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -177,6 +195,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_127257824_4852471_1?wid=480&hei=480&qlt=70&fmt=webp",
       "https://falabella.scene7.com/is/image/Falabella/gsc_127257824_4852471_2?wid=480&hei=480&qlt=70&fmt=webp",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_127257824_4852471_3?wid=480&hei=480&qlt=70&fmt=webp",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_127257824_4852471_4?wid=480&hei=480&qlt=70&fmt=webp"
     ]
   },
   {
@@ -195,6 +215,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_122963800_3493748_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_122963800_3493748_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_122963800_3493748_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_122963800_3493748_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -213,6 +235,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_110718619_181965_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_110718619_181965_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_110718619_181965_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_110718619_181965_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -231,6 +255,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_118178634_2005185_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_118178634_2005185_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_118178634_2005185_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_118178634_2005185_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -249,6 +275,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_126152626_4466209_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_126152626_4466209_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_126152626_4466209_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_126152626_4466209_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -267,6 +295,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_129319583_5553489_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_129319583_5553489_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_129319583_5553489_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_129319583_5553489_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -285,6 +315,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_125822623_4339938_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_125822623_4339938_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_125822623_4339938_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_125822623_4339938_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -303,6 +335,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_114277972_949743_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_114277972_949743_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_114277972_949743_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_114277972_949743_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -321,6 +355,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_126560127_4601945_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_126560127_4601945_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_126560127_4601945_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_126560127_4601945_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -339,6 +375,8 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_114165274_907134_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_114165274_907134_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_114165274_907134_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_114165274_907134_4?wid=1500&hei=1500&qlt=70"
     ]
   },
   {
@@ -357,14 +395,16 @@ const productos = [
     imagenes: [
       "https://falabella.scene7.com/is/image/Falabella/gsc_119960209_2540248_1?wid=1500&hei=1500&qlt=70",
       "https://falabella.scene7.com/is/image/Falabella/gsc_119960209_2540248_2?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_119960209_2540248_3?wid=1500&hei=1500&qlt=70",
+      "https://falabella.scene7.com/is/image/Falabella/gsc_119960209_2540248_4?wid=1500&hei=1500&qlt=70"
     ]
   }
 ];
 
 export const getProducts = () => {
   return new Promise((resolve) => {
-      setTimeout(() => {
-          resolve(productos);
-      }, 1200);
+    setTimeout(() => {
+      resolve(productos);
+    }, 1200);
   });
 };
