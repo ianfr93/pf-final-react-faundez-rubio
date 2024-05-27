@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import useCount from "../../hooks/useCount";
 import ItemCount from "../ItemCount/ItemCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import "./Item.css";
+import { CartContext } from '../../context/CartContext';
 
 export default function Item({ item }) {
-  const { count, increment, decrement } = useCount(0);
+  const { addToCart } = useContext(CartContext);
 
-  const onAdd = (nombreDeItem, cantidadALlevar) => {
-    console.log("nombreDeItem: ", nombreDeItem);
-    console.log("cantidadALlevar: ", cantidadALlevar);
-
-    console.log({ count, item });
+  const handleAddToCart = (count) => {
+    if (count > 0) {
+      addToCart({ ...item, quantity: count });
+    }
   };
 
   return (
@@ -30,11 +29,10 @@ export default function Item({ item }) {
       <div className="item-actions__container">
         <ItemCount
           stock={item.stock}
-          count={count}
-          increment={increment}
-          decrement={decrement}
+          initialCount={0} 
+          addToCart={handleAddToCart} 
         />
-        <button className="item--cart__button" onClick={() => onAdd(item, count)}>
+        <button className="item--cart__button" onClick={() => handleAddToCart(1)}>
           <FontAwesomeIcon icon={faCartPlus} />
         </button>
       </div>

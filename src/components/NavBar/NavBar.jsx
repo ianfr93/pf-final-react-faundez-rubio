@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, IconButton, Drawer, Box, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Brand from '../Brand/Brand';
 import AuthModal from '../AuthModal/AuthModal';
 import CartIcon from '../CartIcon/CartIcon';
-import CategoryList from '../CategoryList/CategoryList'; // Asegúrate de que esta ruta sea correcta
+import CategoryList from '../CategoryList/CategoryList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { CartContext } from '../../context/CartContext'; 
 
 function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
+  const { cart } = useContext(CartContext); 
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
@@ -44,6 +46,8 @@ function NavBar() {
     },
   };
 
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0); // Calcular la cantidad total de productos
+
   return (
     <div>
       <AppBar position="static" sx={{ backgroundColor: '#012B65' }}>
@@ -67,7 +71,10 @@ function NavBar() {
               <FontAwesomeIcon icon={faUser} />
               <span>Ingresar</span>
             </Button>
-            <CartIcon /> {/* Añade el CartIcon aquí */}
+            <div className="cart--container">
+              <CartIcon />
+              {totalItems > 0 && <span>{totalItems}</span>} {/* Mostrar la cantidad total de productos */}
+            </div>
           </Box>
         </Toolbar>
       </AppBar>
