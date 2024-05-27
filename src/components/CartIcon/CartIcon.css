@@ -31,40 +31,35 @@
   
   @media (max-width: 576px) {
     .cart--container {
-        margin-left: auto; 
-      }
-    
-      .cart--container > span {
-        top: 40px;
-        right: -5px;
-        padding: 1px 4px;
-        font-size: 10px;
-      
-      }
-
-      .cart--container svg{
-        top: 40px;
-      }
+      margin-left: auto;
+    }
+  
+    .cart--container > span {
+      top: 0px;
+      right: -5px;
+      padding: 1px 4px;
+      font-size: 10px;
+    }
+  
+    .cart--container svg {
+      top: 40px;
+    }
   }
   
-
-
-
-@media screen and (max-width: 320px) {
+  @media screen and (max-width: 320px) {
     .cart--container {
-        margin-left: auto; 
-      }
-    
-      .cart--container > span {
-        top: 40px;
-        right: -5px;
-        padding: 1px 4px;
-        font-size: 10px;
-      
-      }
-
-      .cart--container svg{
-        top: 40px;
-      }
+      margin-left: auto;
+    }
+  
+    .cart--container > span {
+      top: 0px;
+      right: -5px;
+      padding: 1px 4px;
+      font-size: 10px;
+    }
+  
+    .cart--container svg {
+      top: 40px;
+    }
   }
   
