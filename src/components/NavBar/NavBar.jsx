@@ -14,7 +14,6 @@ import { CartContext } from '../../context/CartContext';
 function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const { toggleCart } = useContext(CartContext);
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
@@ -62,14 +61,41 @@ function NavBar() {
               <FontAwesomeIcon icon={faHome} />
               Home
             </Button>
-            {/* Other buttons */}
+            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/gamer-zone">
+              <FontAwesomeIcon icon={faGamepad} />
+              Gamer Zone
+            </Button>
+            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/arma-tu-pc">
+              <FontAwesomeIcon icon={faTools} />
+              Arma tu PC
+            </Button>
+            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/tiendas">
+              <FontAwesomeIcon icon={faStore} />
+              Tiendas
+            </Button>
+            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/servicios">
+              <FontAwesomeIcon icon={faConciergeBell} />
+              Servicios
+            </Button>
+            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/seguir-mi-pedido">
+              <FontAwesomeIcon icon={faTruck} />
+              Seguir mi pedido
+            </Button>
+            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/contacto">
+              <FontAwesomeIcon icon={faEnvelope} />
+              Contacto
+            </Button>
+            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/about/">
+              <FontAwesomeIcon icon={faInfoCircle} />
+              About
+            </Button>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }}>
             <Button color="inherit" onClick={handleAuthModalOpen} sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <FontAwesomeIcon icon={faUser} />
               <span>Ingresar</span>
             </Button>
-            <div className="cart--container" onClick={toggleCart}>
+            <div className="cart--container">
               <CartIcon />
             </div>
           </Box>
