@@ -16,7 +16,7 @@ function ItemDetail({ product }) {
   }
 
   const handleAddToCart = () => {
-    addToCart({ ...product, quantity: count });
+    addToCart(product, count);
   };
 
   const handleCountChange = (newCount) => {
@@ -58,7 +58,7 @@ function ItemDetail({ product }) {
           <p className="item-detail__price">Precio: ${product.precio}</p>
           <p className="item-detail__stock">Stock disponible: {product.stock}</p>
           <div className="item-actions__container">
-            <ItemCount stock={product.stock} count={count} onCountChange={handleCountChange} />
+            <ItemCount stock={product.stock} initialCount={count} onCountChange={handleCountChange} />
             <button className="item--cart__button" onClick={handleAddToCart}>
               <FontAwesomeIcon icon={faCartPlus} />
             </button>

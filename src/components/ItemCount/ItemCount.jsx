@@ -2,11 +2,11 @@ import React from "react";
 import "./ItemCount.css";
 import useCount from "../../hooks/useCount";
 
-export default function ItemCount({ stock, initialCount = 0, addToCart }) {
+export default function ItemCount({ stock, initialCount = 0, onCountChange }) {
   const { count, increment, decrement } = useCount(initialCount);
 
   const handleAddToCart = () => {
-    addToCart(count);
+    onCountChange(count);
   };
 
   return (
