@@ -6,6 +6,7 @@ import { faStar, faTruck, faUndo, faCartPlus } from '@fortawesome/free-solid-svg
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { CartContext } from '../../context/CartContext'; 
 
+
 function ItemDetail({ product }) {
   const { addToCart } = useContext(CartContext); 
   const [count, setCount] = useState(0);

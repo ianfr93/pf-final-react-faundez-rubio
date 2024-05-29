@@ -1,19 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
-import "./Item.css";
 import { CartContext } from '../../context/CartContext';
-
-
+import "./Item.css";
 
 export default function Item({ item }) {
   const { addToCart } = useContext(CartContext);
+  const [count, setCount] = useState(0);
 
-  const handleAddToCart = (count) => {
+  const handleCountChange = (newCount) => {
+    setCount(newCount);
+  };
+
+  const handleAddToCart = () => {
     if (count > 0) {
-      addToCart({ ...item, quantity: count });
+      addToCart(item, count);
     }
   };
 
@@ -31,10 +34,10 @@ export default function Item({ item }) {
       <div className="item-actions__container">
         <ItemCount
           stock={item.stock}
-          initialCount={0} 
-          addToCart={handleAddToCart} 
+          initialCount={count}
+          onCountChange={handleCountChange}
         />
-        <button className="item--cart__button" onClick={() => handleAddToCart(1)}>
+        <button className="item--cart__button" onClick={handleAddToCart}>
           <FontAwesomeIcon icon={faCartPlus} />
         </button>
       </div>
