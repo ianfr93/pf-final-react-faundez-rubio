@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ItemCount.css";
 import useCount from "../../hooks/useCount";
 
 export default function ItemCount({ stock, initialCount = 0, onCountChange }) {
   const { count, increment, decrement } = useCount(initialCount);
+
+  useEffect(() => {
+    onCountChange(count);
+  }, [count, onCountChange]);
 
   return (
     <div className="item--count__container">

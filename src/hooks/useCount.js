@@ -8,7 +8,7 @@ export default function useCount(initialValue = 0) {
   };
 
   const decrement = () => {
-    setCount(count - 1);
+    setCount(prevCount => (prevCount > 0 ? prevCount - 1 : 0));
   };
 
   return { count, increment, decrement };

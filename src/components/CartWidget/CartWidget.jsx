@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-import CartIcon from 'components/CartIcon/CartIcon'; 
-
-import './CartWidget.css'; 
+import './CartWidget.css';
 
 function CartWidget() {
   const { cart, isCartOpen, toggleCart, removeFromCart } = useContext(CartContext);
