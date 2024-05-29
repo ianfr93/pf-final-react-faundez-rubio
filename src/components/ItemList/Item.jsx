@@ -6,6 +6,8 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import "./Item.css";
 import { CartContext } from '../../context/CartContext';
 
+
+
 export default function Item({ item }) {
   const { addToCart } = useContext(CartContext);
 

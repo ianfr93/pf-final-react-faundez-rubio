@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
@@ -7,12 +7,21 @@ import SearchResults from "./components/SearchResults/SearchResults";
 import useProducts from "./hooks/useProducts";
 import ImageCarousel from "./components/ImageCarousel/ImageCarousel";
 import { CartProvider } from "./context/CartContext";
-
-import CartWidget from "./components/CartWidget/CartWidget"; // Asegúrate de importar CartWidget
+import CartWidget from "./components/CartWidget/CartWidget";
+import AuthModal from "./components/AuthModal/AuthModal"; 
 
 function App() {
   const { products, isLoading } = useProducts();
   const location = useLocation();
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+
+  const handleAuthModalOpen = () => {
+    setAuthModalOpen(true);
+  };
+
+  const handleAuthModalClose = () => {
+    setAuthModalOpen(false);
+  };
 
   if (isLoading) return <h1>Cargando...</h1>;
 
@@ -26,6 +35,8 @@ function App() {
           <Route path="/product/:id" element={<ItemDetailContainer products={products} />} />
           <Route path="/search" element={<SearchResults />} />
         </Routes>
+        <CartWidget /> {/* Asegúrate de que CartWidget se renderice aquí */}
+        <AuthModal open={authModalOpen} handleClose={handleAuthModalClose} /> {/* Renderiza AuthModal */}
       </Layout>
     </CartProvider>
   );

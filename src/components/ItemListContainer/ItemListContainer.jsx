@@ -4,6 +4,7 @@ import ItemList from '../ItemList/ItemList';
 import { getProducts } from '../../services/productService'; 
 import './ItemListContainer.css';
 
+
 function ItemListContainer({ saludo }) {
   const { id } = useParams();
   const [filteredProducts, setFilteredProducts] = useState([]);
