@@ -10,11 +10,16 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     if (id) {
+      console.log(`Obteniendo producto con ID: ${id}`); // Verifica el ID obtenido de la URL
       getProductById(id)
         .then((data) => {
+          console.log("Producto obtenido:", data); // Verifica el producto obtenido
           setProduct(data);
         })
-        .catch((error) => console.error("Error al obtener producto:", error))
+        .catch((error) => {
+          console.error("Error al obtener producto:", error);
+          setProduct(null); // Asegúrate de actualizar el estado en caso de error
+        })
         .finally(() => setIsLoading(false));
     }
   }, [id]);

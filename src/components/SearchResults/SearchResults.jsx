@@ -10,6 +10,8 @@ const SearchResults = () => {
     return <h1>No se encontraron productos</h1>;
   }
 
+  console.log("Resultados de la búsqueda:", results); // Verifica los resultados en la consola
+
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>Resultados de la búsqueda</h1>
