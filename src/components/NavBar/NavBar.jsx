@@ -14,6 +14,7 @@ import { CartContext } from '../../context/CartContext';
 function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
+  const { toggleCart } = useContext(CartContext);
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
@@ -95,7 +96,7 @@ function NavBar() {
               <FontAwesomeIcon icon={faUser} />
               <span>Ingresar</span>
             </Button>
-            <div className="cart--container">
+            <div className="cart--container" onClick={toggleCart}>
               <CartIcon />
             </div>
           </Box>

@@ -8,6 +8,8 @@ import useProducts from "./hooks/useProducts";
 import ImageCarousel from "./components/ImageCarousel/ImageCarousel";
 import { CartProvider } from "./context/CartContext";
 
+import CartWidget from "./components/CartWidget/CartWidget"; // Asegúrate de importar CartWidget
+
 function App() {
   const { products, isLoading } = useProducts();
   const location = useLocation();
