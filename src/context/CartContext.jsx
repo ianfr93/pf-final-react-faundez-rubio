@@ -7,17 +7,18 @@ export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const addToCart = (product, quantity) => {
-    const existingProductIndex = cart.findIndex(item => item.id === product.id);
-    if (existingProductIndex >= 0) {
-      const updatedCart = cart.map((item, index) =>
-        index === existingProductIndex
-          ? { ...item, quantity: item.quantity + quantity }
-          : item
-      );
-      setCart(updatedCart);
-    } else {
-      setCart([...cart, { ...product, quantity }]);
-    }
+    setCart((prevCart) => {
+      const existingProductIndex = prevCart.findIndex(item => item.id === product.id);
+      if (existingProductIndex >= 0) {
+        return prevCart.map((item, index) =>
+          index === existingProductIndex
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
+        );
+      } else {
+        return [...prevCart, { ...product, quantity }];
+      }
+    });
   };
 
   const removeFromCart = (productId) => {

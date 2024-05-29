@@ -8,7 +8,7 @@ import { CartContext } from '../../context/CartContext';
 
 function ItemDetail({ product }) {
   const { addToCart } = useContext(CartContext); 
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const [selectedImage, setSelectedImage] = useState(product.imagen);
 
   if (!product) {
@@ -16,7 +16,9 @@ function ItemDetail({ product }) {
   }
 
   const handleAddToCart = () => {
-    addToCart(product, count);
+    if (count > 0) {
+      addToCart(product, count);
+    }
   };
 
   const handleCountChange = (newCount) => {

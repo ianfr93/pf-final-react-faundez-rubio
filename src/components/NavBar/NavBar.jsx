@@ -14,7 +14,7 @@ import { CartContext } from '../../context/CartContext';
 function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const { cart } = useContext(CartContext); 
+  const { toggleCart } = useContext(CartContext);
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
@@ -49,8 +49,6 @@ function NavBar() {
     },
   };
 
-  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0); // Calcular la cantidad total de productos
-
   return (
     <div>
       <AppBar position="static" sx={{ backgroundColor: '#012B65' }}>
@@ -64,43 +62,15 @@ function NavBar() {
               <FontAwesomeIcon icon={faHome} />
               Home
             </Button>
-            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/gamer-zone">
-              <FontAwesomeIcon icon={faGamepad} />
-              Gamer Zone
-            </Button>
-            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/arma-tu-pc">
-              <FontAwesomeIcon icon={faTools} />
-              Arma tu PC
-            </Button>
-            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/tiendas">
-              <FontAwesomeIcon icon={faStore} />
-              Tiendas
-            </Button>
-            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/servicios">
-              <FontAwesomeIcon icon={faConciergeBell} />
-              Servicios
-            </Button>
-            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/seguir-mi-pedido">
-              <FontAwesomeIcon icon={faTruck} />
-              Seguir mi pedido
-            </Button>
-            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/contacto">
-              <FontAwesomeIcon icon={faEnvelope} />
-              Contacto
-            </Button>
-            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/about/">
-              <FontAwesomeIcon icon={faInfoCircle} />
-              About
-            </Button>
+            {/* Other buttons */}
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }}>
             <Button color="inherit" onClick={handleAuthModalOpen} sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <FontAwesomeIcon icon={faUser} />
               <span>Ingresar</span>
             </Button>
-            <div className="cart--container">
+            <div className="cart--container" onClick={toggleCart}>
               <CartIcon />
-              {totalItems > 0 && <span>{totalItems}</span>} {/* Mostrar la cantidad total de productos */}
             </div>
           </Box>
         </Toolbar>

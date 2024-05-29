@@ -5,10 +5,6 @@ import useCount from "../../hooks/useCount";
 export default function ItemCount({ stock, initialCount = 0, onCountChange }) {
   const { count, increment, decrement } = useCount(initialCount);
 
-  const handleAddToCart = () => {
-    onCountChange(count);
-  };
-
   return (
     <div className="item--count__container">
       <div className="item--count--counter__container">

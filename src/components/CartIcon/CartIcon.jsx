@@ -1,19 +1,30 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-import '../CartIcon/CartIcon.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FaShoppingCart } from 'react-icons/fa';
 
-function CartIcon({ width = '24px', height = '24px' }) {
+const CartIcon = () => {
   const { cart } = useContext(CartContext);
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <div className="cart--container">
-      <FontAwesomeIcon icon={faShoppingCart} width={width} height={height} />
-      {totalItems > 0 && <span>{totalItems}</span>}
+    <div style={{ position: 'relative' }}>
+      <FaShoppingCart />
+      {totalItems > 0 && (
+        <span style={{
+          position: 'absolute',
+          top: '-10px',
+          right: '-10px',
+          background: 'red',
+          color: 'white',
+          borderRadius: '50%',
+          padding: '5px',
+          fontSize: '12px',
+        }}>
+          {totalItems}
+        </span>
+      )}
     </div>
   );
-}
+};
 
 export default CartIcon;
