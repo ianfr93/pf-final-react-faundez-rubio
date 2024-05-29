@@ -3,6 +3,8 @@ import { Modal, Box, Typography, TextField, Button, IconButton, InputAdornment, 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, googleProvider } from '../../firebaseConfig'; // Asegúrate de que la ruta sea correcta
 import './AuthModal.css';
 
 const style = {
@@ -15,7 +17,7 @@ const style = {
   boxShadow: 24,
   p: 4,
   borderRadius: '10px',
-  background: 'linear-gradient(135deg, #012B65, #004080)', // Updated gradient
+  background: 'linear-gradient(135deg, #012B65, #004080)',
   color: '#fff',
 };
 
@@ -31,17 +33,33 @@ function AuthModal({ open, handleClose }) {
     setError('');
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!email || !password || (!isLogin && password !== confirmPassword)) {
       setError('Por favor, completa todos los campos correctamente.');
       return;
     }
-    console.log("Correo:", email);
-    console.log("Contraseña:", password);
-    if (!isLogin) {
-      console.log("Confirmar Contraseña:", confirmPassword);
+
+    try {
+      if (isLogin) {
+        await signInWithEmailAndPassword(auth, email, password);
+      } else {
+        await createUserWithEmailAndPassword(auth, email, password);
+      }
+      handleClose();
+    } catch (error) {
+      console.error('Error en la autenticación:', error);
+      setError('Error en la autenticación. Inténtalo de nuevo.');
     }
-    handleClose();
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+      handleClose();
+    } catch (error) {
+      console.error('Error en la autenticación con Google:', error);
+      setError('Error en la autenticación con Google. Inténtalo de nuevo.');
+    }
   };
 
   return (
@@ -124,8 +142,7 @@ function AuthModal({ open, handleClose }) {
         </Button>
         <Box sx={{ mt: 2, textAlign: 'center' }}>
           <Typography variant="body2" sx={{ color: '#fff', mb: 1 }}>o ingresa con</Typography>
-          <IconButton sx={{ color: '#fff' }}><FontAwesomeIcon icon={faFacebook} /></IconButton>
-          <IconButton sx={{ color: '#fff' }}><FontAwesomeIcon icon={faGoogle} /></IconButton>
+          <IconButton sx={{ color: '#fff' }} onClick={handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} /></IconButton>
         </Box>
       </Box>
     </Modal>
