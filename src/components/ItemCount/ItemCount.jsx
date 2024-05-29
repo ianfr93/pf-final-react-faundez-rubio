@@ -6,7 +6,9 @@ export default function ItemCount({ stock, initialCount = 0, onCountChange }) {
   const { count, increment, decrement } = useCount(initialCount);
 
   useEffect(() => {
-    onCountChange(count);
+    if (typeof onCountChange === 'function') {
+      onCountChange(count);
+    }
   }, [count, onCountChange]);
 
   return (
