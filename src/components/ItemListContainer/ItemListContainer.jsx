@@ -1,26 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
-import './ItemListContainer.css'; 
+import { getProducts } from '../../services/productService'; 
+import './ItemListContainer.css';
 
-function ItemListContainer({ saludo, products }) {
+function ItemListContainer({ saludo }) {
   const { id } = useParams();
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [categoryTitle, setCategoryTitle] = useState('');
   const [sortOrder, setSortOrder] = useState('default');
 
   useEffect(() => {
-    let filtered = products;
+    const fetchProducts = async () => {
+      const products = await getProducts();
+      let filtered = products;
 
-    if (id) {
-      filtered = products.filter(product => product.categoria === id);
-      setCategoryTitle(getCategoryTitle(id));
-    } else {
-      setCategoryTitle('Todos los productos');
-    }
+      if (id) {
+        filtered = products.filter(product => product.categoria === id);
+        setCategoryTitle(getCategoryTitle(id));
+      } else {
+        setCategoryTitle('Todos los productos');
+      }
 
-    setFilteredProducts(sortProducts(filtered, sortOrder));
-  }, [id, products, sortOrder]);
+      setFilteredProducts(sortProducts(filtered, sortOrder));
+    };
+
+    fetchProducts();
+  }, [id, sortOrder]);
 
   const sortProducts = (products, order) => {
     switch (order) {
@@ -33,7 +39,7 @@ function ItemListContainer({ saludo, products }) {
       case 'date-oldest':
         return [...products].sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
       default:
-        return products; 
+        return products;
     }
   };
 
