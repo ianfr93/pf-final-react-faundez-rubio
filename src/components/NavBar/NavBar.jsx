@@ -64,7 +64,7 @@ function NavBar() {
             <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/servicios">Servicios</Button>
             <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/seguir-mi-pedido">Seguir mi pedido</Button>
             <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/contacto">Contacto</Button>
-            <Button sx={navButtonStyles} color="inherit" component={Link} to="/about">About</Button>
+            <Button sx={navButtonStyles} color="inherit" component={Link} to="/category/about/">About</Button>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }}>
             <Button color="inherit" onClick={handleAuthModalOpen} sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
