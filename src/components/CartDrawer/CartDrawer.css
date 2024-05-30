@@ -1,10 +1,11 @@
 .cart-drawer {
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
 }
 
 .cart-title {
@@ -44,6 +45,7 @@
 @media (max-width: 600px) {
   .cart-drawer {
     padding: 10px;
+    max-width: 100%;
   }
 
   .cart-title {
@@ -62,4 +64,14 @@
   .cart-summary {
     text-align: left;
   }
+}
+
+/* Estilos adicionales para cuando el carrito está vacío */
+.cart-empty {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: #999;
 }
