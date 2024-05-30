@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCart } from '../../context/CartContext';
-import { ReactComponent as CartSVG } from '../../assets/cart.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './CartIcon.css';
 
 const CartIcon = () => {
@@ -9,8 +10,9 @@ const CartIcon = () => {
 
   return (
     <div className="cart--container">
-      <CartSVG className="cart-icon-svg" />
+      <FontAwesomeIcon icon={faShoppingCart} size="lg" />
       {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
+      <span className="cart-text">Mi Carro</span> {/* Añadido */}
     </div>
   );
 };

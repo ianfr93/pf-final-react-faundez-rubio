@@ -11,8 +11,8 @@
 
 .cart-count {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -12px; 
+  left: 8px; 
   background-color: red;
   border: 2px solid white;
   border-radius: 50%;
@@ -21,15 +21,21 @@
   font-size: 12px;
 }
 
+.cart-text {
+  margin-left: 10px;
+  color: white; 
+  font-size: 14px; 
+}
+
 @media (max-width: 600px) {
   .cart--container {
     margin-left: auto;
   }
 
   .cart-count {
-    top: -5px;
-    right: -5px;
-    padding: 1px 4px;
+    top: -10px; 
+    left: 8px; 
+    padding: 2px 6px;
     font-size: 10px;
   }
 }
@@ -40,14 +46,20 @@
   }
 
   .cart-count {
-    top: 0px;
-    right: -5px;
-    padding: 1px 4px;
+    top: -10px; 
+    left: 8px; 
+    padding: 2px 6px;
     font-size: 10px;
   }
 
   .cart--container svg {
-    top: 40px;
+    width: 20px;
+    height: 20px;
+  }
+  .cart-text {
+    margin-left: 5px; /* Ajuste de margen izquierdo */
+    color: white; 
+    font-size: 8px; /* Ajuste de tamaño de fuente */
   }
 }
 
@@ -57,13 +69,17 @@
   }
 
   .cart-count {
-    top: 0px;
-    right: -5px;
-    padding: 1px 4px;
+    top: -10px; 
+    left: 8px; 
+    padding: 2px 6px;
     font-size: 10px;
   }
 
-  .cart--container svg {
-    top: 40px;
+  .cart-text {
+    margin-left: 5px; /* Ajuste de margen izquierdo */
+    color: white; 
+    font-size: 8px; /* Ajuste de tamaño de fuente */
   }
+
+
 }
