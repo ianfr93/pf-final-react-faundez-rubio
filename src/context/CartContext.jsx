@@ -8,6 +8,7 @@ export const useCart = () => {
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const addToCart = (product, quantity) => {
     const existingProductIndex = cart.findIndex(item => item.id === product.id);
@@ -28,11 +29,17 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   };
 
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
   const value = {
     cart,
     addToCart,
     removeFromCart,
     clearCart,
+    isCartOpen,
+    toggleCart,
   };
 
   return (

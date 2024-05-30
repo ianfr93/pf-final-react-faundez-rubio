@@ -1,20 +1,29 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
+import React, { useState } from 'react';
+import { useCart } from '../../context/CartContext';
+import CartIcon from '../CartIcon/CartIcon';
+import CartDrawer from '../CartDrawer/CartDrawer';
+import './CartWidget.css';
 
 const CartWidget = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, toggleCart } = useCart();
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  // Si `cart` es undefined, manejar el error
-  if (!cart) {
-    console.error("El carrito no está definido");
-    return null;
-  }
+  const handleDrawerOpen = () => {
+    setIsDrawerOpen(true);
+    toggleCart();
+  };
 
-  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const handleDrawerClose = () => {
+    setIsDrawerOpen(false);
+    toggleCart();
+  };
 
   return (
-    <div>
-      <span>Carrito: {totalItems} items</span>
+    <div className="cart-widget">
+      <div onClick={handleDrawerOpen}>
+        <CartIcon />
+      </div>
+      <CartDrawer isOpen={isDrawerOpen} toggleDrawer={handleDrawerClose} />
     </div>
   );
 };

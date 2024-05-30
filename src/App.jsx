@@ -7,10 +7,9 @@ import SearchResults from "./components/SearchResults/SearchResults";
 import useProducts from "./hooks/useProducts";
 import ImageCarousel from "./components/ImageCarousel/ImageCarousel";
 import { CartProvider } from "./context/CartContext";
-import CartWidget from "./components/CartWidget/CartWidget";
-import Cart from "./components/Cart/Cart";
-import Checkout from "./components/Checkout/Checkout"; // Importa Checkout
-
+import CartDrawer from "./components/CartDrawer/CartDrawer";
+import Checkout from "./components/Checkout/Checkout"; 
+import Cart from './components/Cart/Cart'; 
 
 function App() {
   const { products, isLoading } = useProducts();
@@ -27,10 +26,10 @@ function App() {
           <Route path="/category/:id" element={<ItemListContainer saludo="¡Bienvenido a nuestra tienda!" products={products} />} />
           <Route path="/product/:id" element={<ItemDetailContainer products={products} />} />
           <Route path="/search" element={<SearchResults />} />
-          <Route path="/cart" element={<Cart />} /> {/* Añade la ruta del carrito */}
-          <Route path="/checkout" element={<Checkout />} /> {/* Añade la ruta del checkout */}
+          <Route path="/cart" element={<Cart />} /> 
+          <Route path="/checkout" element={<Checkout />} /> 
         </Routes>
-        <CartWidget /> {/* Asegúrate de que CartWidget se renderice aquí */}
+        <CartDrawer /> 
       </Layout>
     </CartProvider>
   );
