@@ -7,7 +7,9 @@ import SearchResults from "./components/SearchResults/SearchResults";
 import useProducts from "./hooks/useProducts";
 import ImageCarousel from "./components/ImageCarousel/ImageCarousel";
 import { CartProvider } from "./context/CartContext";
-import CartWidget from "./components/CartWidget/CartWidget"; 
+import CartWidget from "./components/CartWidget/CartWidget";
+import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout"; // Importa Checkout
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
           <Route path="/category/:id" element={<ItemListContainer saludo="¡Bienvenido a nuestra tienda!" products={products} />} />
           <Route path="/product/:id" element={<ItemDetailContainer products={products} />} />
           <Route path="/search" element={<SearchResults />} />
+          <Route path="/cart" element={<Cart />} /> {/* Añade la ruta del carrito */}
+          <Route path="/checkout" element={<Checkout />} /> {/* Añade la ruta del checkout */}
         </Routes>
         <CartWidget /> {/* Asegúrate de que CartWidget se renderice aquí */}
       </Layout>

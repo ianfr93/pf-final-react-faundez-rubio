@@ -1,65 +1,69 @@
 .cart--container {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon-svg {
+  width: 24px; 
+  height: 24px; 
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  color: white;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .cart--container {
+    margin-left: auto;
   }
-  
-  .cart--container > span {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: red;
-    border: 2px solid white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    color: white;
-    font-size: 12px;
+
+  .cart-count {
+    top: -5px;
+    right: -5px;
+    padding: 1px 4px;
+    font-size: 10px;
   }
-  
-  @media (max-width: 600px) {
-    .cart--container {
-      margin-left: auto;
-    }
-  
-    .cart--container > span {
-      top: -5px;
-      right: -5px;
-      padding: 1px 4px;
-      font-size: 10px;
-    }
+}
+
+@media (max-width: 576px) {
+  .cart--container {
+    margin-left: auto;
   }
-  
-  @media (max-width: 576px) {
-    .cart--container {
-      margin-left: auto;
-    }
-  
-    .cart--container > span {
-      top: 0px;
-      right: -5px;
-      padding: 1px 4px;
-      font-size: 10px;
-    }
-  
-    .cart--container svg {
-      top: 40px;
-    }
+
+  .cart-count {
+    top: 0px;
+    right: -5px;
+    padding: 1px 4px;
+    font-size: 10px;
   }
-  
-  @media screen and (max-width: 320px) {
-    .cart--container {
-      margin-left: auto;
-    }
-  
-    .cart--container > span {
-      top: 0px;
-      right: -5px;
-      padding: 1px 4px;
-      font-size: 10px;
-    }
-  
-    .cart--container svg {
-      top: 40px;
-    }
+
+  .cart--container svg {
+    top: 40px;
   }
-  
+}
+
+@media screen and (max-width: 320px) {
+  .cart--container {
+    margin-left: auto;
+  }
+
+  .cart-count {
+    top: 0px;
+    right: -5px;
+    padding: 1px 4px;
+    font-size: 10px;
+  }
+
+  .cart--container svg {
+    top: 40px;
+  }
+}
