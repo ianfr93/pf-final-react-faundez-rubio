@@ -1,4 +1,6 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
+import { db } from '../firebaseConfig';
+import { collection, getDocs } from 'firebase/firestore';
 
 const CartContext = createContext();
 
@@ -9,6 +11,16 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    const fetchCartItems = async () => {
+      const querySnapshot = await getDocs(collection(db, 'cart'));
+      const items = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setCart(items);
+    };
+
+    fetchCartItems();
+  }, []);
 
   const addToCart = (product, quantity) => {
     const existingProductIndex = cart.findIndex(item => item.id === product.id);
@@ -33,6 +45,8 @@ export const CartProvider = ({ children }) => {
     setIsCartOpen(!isCartOpen);
   };
 
+  const totalAmount = cart.reduce((acc, item) => acc + item.quantity * item.price, 0);
+
   const value = {
     cart,
     addToCart,
@@ -40,6 +54,7 @@ export const CartProvider = ({ children }) => {
     clearCart,
     isCartOpen,
     toggleCart,
+    totalAmount,
   };
 
   return (
