@@ -12,7 +12,7 @@ const useProducts = () => {
       const productSnapshot = await getDocs(productsCollection);
       const productList = productSnapshot.docs.map(doc => {
         const data = doc.data();
-        return { id: doc.id, ...data, price: data.precio || 0 }; 
+        return { id: doc.id, ...data, price: data.price || 0 }; 
       });
       setProducts(productList);
       setIsLoading(false);
