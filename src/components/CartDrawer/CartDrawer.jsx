@@ -5,11 +5,20 @@ import { Add, Remove } from '@mui/icons-material';
 import './CartDrawer.css';
 
 const CartDrawer = () => {
-  const { cart, removeFromCart, isCartOpen, toggleCart, addToCart, totalAmount } = useCart();
+  const { cart, removeFromCart, isCartOpen, toggleCart, addToCart } = useCart();
 
   const calculateTotal = () => {
     return cart.reduce((acc, item) => acc + (item.quantity * (item.price || 0)), 0).toFixed(2);
   };
+
+  const calculateTaxes = (total) => (total * 0.19).toFixed(2);
+  const calculateShipping = (total) => (total > 100 ? 0 : 5).toFixed(2);
+  const calculateFinalTotal = (total, taxes, shipping) => (parseFloat(total) + parseFloat(taxes) + parseFloat(shipping)).toFixed(2);
+
+  const total = calculateTotal();
+  const taxes = calculateTaxes(total);
+  const shipping = calculateShipping(total);
+  const finalTotal = calculateFinalTotal(total, taxes, shipping);
 
   return (
     <Drawer anchor="right" open={isCartOpen} onClose={toggleCart}>
@@ -48,10 +57,10 @@ const CartDrawer = () => {
         </List>
         <Divider />
         <Box className="cart-summary">
-          <Typography variant="h6">Subtotal: ${calculateTotal()}</Typography>
-          <Typography variant="body2">Impuestos: ${(totalAmount * 0.19).toFixed(2)}</Typography>
-          <Typography variant="body2">Envío: ${(totalAmount > 100 ? 0 : 5).toFixed(2)}</Typography>
-          <Typography variant="h6">Total: ${(totalAmount * 1.19 + (totalAmount > 100 ? 0 : 5)).toFixed(2)}</Typography>
+          <Typography variant="h6">Subtotal: ${total}</Typography>
+          <Typography variant="body2">Impuestos: ${taxes}</Typography>
+          <Typography variant="body2">Envío: ${shipping}</Typography>
+          <Typography variant="h6">Total: ${finalTotal}</Typography>
           <Button variant="contained" color="primary" className="checkout-button">
             Proceder al pago
           </Button>

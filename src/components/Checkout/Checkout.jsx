@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { saveOrder } from '../../services/productService'; 
 
 const Checkout = () => {
   const { cart, clearCart } = useContext(CartContext);
@@ -22,14 +22,13 @@ const Checkout = () => {
       buyer: formData,
       items: cart,
       total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
-      date: new Date()
+      date: new Date(),
+      estado: 'generada',
     };
 
     try {
-      const db = getFirestore();
-      const ordersCollection = collection(db, 'orders');
-      const docRef = await addDoc(ordersCollection, order);
-      setOrderId(docRef.id);
+      const orderId = await saveOrder(order);
+      setOrderId(orderId);
       clearCart();
     } catch (error) {
       console.error('Error al guardar la orden:', error);

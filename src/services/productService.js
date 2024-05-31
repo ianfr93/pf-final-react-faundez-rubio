@@ -1,4 +1,4 @@
-import { collection, getDocs, getDoc, doc } from "firebase/firestore";
+import { collection, getDocs, getDoc, doc, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
 // Función para obtener todos los productos
@@ -32,4 +32,16 @@ const getProductById = async (id) => {
   }
 };
 
-export { getProducts, getProductById };
+// Función para guardar una orden
+const saveOrder = async (order) => {
+  try {
+    const docRef = await addDoc(collection(db, "orders"), order);
+    console.log("Order ID: ", docRef.id);
+    return docRef.id;
+  } catch (e) {
+    console.error("Error adding document: ", e);
+    throw e;
+  }
+};
+
+export { getProducts, getProductById, saveOrder };
