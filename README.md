@@ -8,7 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-"Proyecto e-commerce Tecnoventas: tienda de artículos electrónicos. Se crean 20 productos en un asyncMock. La página es funcional; se puede navegar y buscar productos en la barra del buscador. Al presionar el título de la tarjeta, redirige a ItemDetail. Se agrega footer y estilos CSS. Se crean todos los componentes necesarios y se ajustan las rutas. Se agrega la lógica adecuada para su funcionamiento."
+"Proyecto e-commerce Tecnoventas: tienda de artículos electrónicos. Se crean 20 productos en un firebase se crean los products y las orders con sus item automaticos La página es funcional; se puede navegar y buscar productos en la barra del buscador se puede ingresar con google el usuario vinculado al firebase. Al presionar el título de la tarjeta, redirige a ItemDetail muestra imagenes carga tabla con info. Se agrega footer y estilos CSS un carrousel de imagenes. Se crean todos los componentes necesarios y se ajustan las rutas. Se agrega la lógica adecuada para su funcionamiento. se puede efectuar la compra muestra los detalles se agrega un css mas completo y queda todo mas profesional"
 
 link a netlify 
 https://tecnoventas.netlify.app/
