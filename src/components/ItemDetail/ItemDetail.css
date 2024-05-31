@@ -10,6 +10,11 @@
   max-width: 1200px;
 }
 
+.item-detail__price .price-text {
+  color: #28a745; 
+  font-weight: bold;
+}
+
 .item-detail-header {
   width: 100%;
   text-align: center;

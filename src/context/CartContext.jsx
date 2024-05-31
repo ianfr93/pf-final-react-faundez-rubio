@@ -23,13 +23,13 @@ export const CartProvider = ({ children }) => {
   }, []);
 
   const addToCart = (product, quantity) => {
-    console.log('Producto a agregar:', product); // Verificar datos del producto
+    console.log('Producto a agregar:', product); 
     const existingProductIndex = cart.findIndex(item => item.id === product.id);
     if (existingProductIndex >= 0) {
       const updatedCart = [...cart];
       updatedCart[existingProductIndex].quantity += quantity;
       if (updatedCart[existingProductIndex].quantity <= 0) {
-        updatedCart.splice(existingProductIndex, 1); // Remove item if quantity is 0 or less
+        updatedCart.splice(existingProductIndex, 1); 
       }
       setCart(updatedCart);
     } else {

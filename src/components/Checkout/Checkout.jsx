@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import { saveOrder } from '../../services/productService';
 import "./Checkout.css"; 
@@ -6,7 +7,7 @@ import "./Checkout.css";
 const Checkout = () => {
   const { cart, clearCart } = useContext(CartContext);
   const [formData, setFormData] = useState({ name: '', lastName: '', phone: '', email: '', confirmEmail: '' });
-  const [orderId, setOrderId] = useState(null);
+  const navigate = useNavigate(); // Crear instancia de useNavigate
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -48,17 +49,12 @@ const Checkout = () => {
   
     try {
       const id = await saveOrder(order);
-      setOrderId(id);
       clearCart();
+      navigate(`/order-success/${id}`); // Redirigir a OrderSuccess con el orderId
     } catch (error) {
       console.error('Error al guardar la orden:', error);
     }
   };
-  
-
-  if (orderId) {
-    return <h2>Gracias por tu compra. Tu número de orden es: {orderId}</h2>;
-  }
 
   return (
     <div className="checkout">

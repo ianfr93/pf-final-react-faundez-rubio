@@ -29,7 +29,7 @@ export default function Item({ item }) {
         <h2>{item.titulo}</h2>
       </Link>
       <p className="item--description">{item.descripcion}</p>
-      <p className="item--price">${item.precio}</p>
+      <p className="item--price">${item.price}</p>
 
       <div className="item-actions__container">
         <ItemCount

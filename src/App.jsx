@@ -9,7 +9,8 @@ import ImageCarousel from "./components/ImageCarousel/ImageCarousel";
 import { CartProvider } from "./context/CartContext";
 import CartDrawer from "./components/CartDrawer/CartDrawer";
 import Checkout from "./components/Checkout/Checkout"; 
-import Cart from './components/Cart/Cart'; 
+import Cart from './components/Cart/Cart';
+import OrderSuccess from './components/Checkout/OrderSuccess/OrderSuccess'; 
 
 function App() {
   const { products, isLoading } = useProducts();
@@ -28,6 +29,7 @@ function App() {
           <Route path="/search" element={<SearchResults />} />
           <Route path="/cart" element={<Cart />} /> 
           <Route path="/checkout" element={<Checkout />} /> 
+          <Route path="/order-success/:orderId" element={<OrderSuccess />} /> 
         </Routes>
         <CartDrawer /> 
       </Layout>
