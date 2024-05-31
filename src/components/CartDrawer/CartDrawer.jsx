@@ -11,11 +11,10 @@ const CartDrawer = () => {
 
   const calculateTotal = () => {
     return cart.reduce((acc, item) => {
-      const itemPrice = item.price || 0; // Asegurarse de que el precio no sea undefined
+      const itemPrice = item.price || 0; 
       return acc + (item.quantity * itemPrice);
     }, 0).toFixed(2);
   };
-
   const total = calculateTotal();
 
   return (

@@ -58,7 +58,7 @@ function ItemDetail({ product }) {
             <FontAwesomeIcon icon={faStar} /> 4.5 / 5 (23 Reseñas)
           </div>
           <p className="item-detail__description">{product.descripcion}</p>
-          <p className="item-detail__price">Precio: ${product.precio}</p>
+          <p className="item-detail__price">Price: ${product.price}</p>
           <p className="item-detail__stock">Stock disponible: {product.stock}</p>
           <div className="item-actions__container">
             <ItemCount stock={product.stock} initialCount={count} onCountChange={handleCountChange} />

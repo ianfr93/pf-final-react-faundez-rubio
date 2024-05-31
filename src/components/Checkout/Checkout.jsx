@@ -18,21 +18,21 @@ const Checkout = () => {
       alert('Los correos electrónicos no coinciden');
       return;
     }
-
+  
     const items = cart.map(item => ({
       id: item.id,
       titulo: item.titulo,
       price: item.price,
       quantity: item.quantity
     }));
-
+  
     const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
+  
     if (!items.length || isNaN(total)) {
       alert('Hay un problema con los ítems del carrito.');
       return;
     }
-
+  
     const order = {
       user: {
         nombre: formData.name,
@@ -45,7 +45,7 @@ const Checkout = () => {
       fecha: new Date(),
       estado: 'generada'
     };
-
+  
     try {
       const id = await saveOrder(order);
       setOrderId(id);
@@ -54,6 +54,7 @@ const Checkout = () => {
       console.error('Error al guardar la orden:', error);
     }
   };
+  
 
   if (orderId) {
     return <h2>Gracias por tu compra. Tu número de orden es: {orderId}</h2>;

@@ -4,7 +4,6 @@ import ItemList from '../ItemList/ItemList';
 import { getProducts } from '../../services/productService'; 
 import './ItemListContainer.css';
 
-
 function ItemListContainer({ saludo }) {
   const { id } = useParams();
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -32,9 +31,9 @@ function ItemListContainer({ saludo }) {
   const sortProducts = (products, order) => {
     switch (order) {
       case 'price-asc':
-        return [...products].sort((a, b) => a.precio - b.precio);
+        return [...products].sort((a, b) => a.price - b.price);
       case 'price-desc':
-        return [...products].sort((a, b) => b.precio - a.precio);
+        return [...products].sort((a, b) => b.price - a.price);
       case 'date-newest':
         return [...products].sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
       case 'date-oldest':
@@ -92,7 +91,7 @@ function ItemListContainer({ saludo }) {
             <div>
               <h2>{product.titulo}</h2>
               <p>{product.descripcion}</p>
-              <p>Precio: ${product.precio}</p>
+              <p>Precio: ${product.price}</p>
               <p>Stock disponible: {product.stock}</p>
               <p>Fecha: {new Date(product.fecha).toLocaleDateString()}</p>
             </div>

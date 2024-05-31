@@ -23,13 +23,19 @@ export const CartProvider = ({ children }) => {
   }, []);
 
   const addToCart = (product, quantity) => {
+    console.log('Producto a agregar:', product); // Verificar datos del producto
     const existingProductIndex = cart.findIndex(item => item.id === product.id);
     if (existingProductIndex >= 0) {
       const updatedCart = [...cart];
       updatedCart[existingProductIndex].quantity += quantity;
+      if (updatedCart[existingProductIndex].quantity <= 0) {
+        updatedCart.splice(existingProductIndex, 1); // Remove item if quantity is 0 or less
+      }
       setCart(updatedCart);
     } else {
-      setCart([...cart, { ...product, quantity }]);
+      if (quantity > 0) {
+        setCart([...cart, { ...product, quantity }]);
+      }
     }
   };
 
@@ -45,7 +51,7 @@ export const CartProvider = ({ children }) => {
     setIsCartOpen(!isCartOpen);
   };
 
-  const totalAmount = cart.reduce((acc, item) => acc + item.quantity * item.price, 0);
+  const totalAmount = cart.reduce((acc, item) => acc + item.quantity * (item.price || 0), 0).toFixed(2);
 
   const value = {
     cart,
