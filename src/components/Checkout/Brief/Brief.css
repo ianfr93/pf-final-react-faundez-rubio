@@ -1,0 +1,26 @@
+.brief {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .brief__info h3 {
+    margin-top: 20px;
+    color: #28a745;
+  }
+  
+  .brief__info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .brief__info li {
+    margin-bottom: 10px;
+  }
+  
+  .brief__info p {
+    margin: 5px 0;
+  }
+  

@@ -2,12 +2,14 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import { saveOrder } from '../../services/productService';
+import Brief from "./Brief/Brief"; // Importa el componente Brief correctamente
 import "./Checkout.css"; 
 
 const Checkout = () => {
   const { cart, clearCart } = useContext(CartContext);
   const [formData, setFormData] = useState({ name: '', lastName: '', phone: '', email: '', confirmEmail: '' });
-  const navigate = useNavigate(); // Crear instancia de useNavigate
+  const [orderId, setOrderId] = useState(null);
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,21 +21,21 @@ const Checkout = () => {
       alert('Los correos electrónicos no coinciden');
       return;
     }
-  
+
     const items = cart.map(item => ({
       id: item.id,
       titulo: item.titulo,
       price: item.price,
       quantity: item.quantity
     }));
-  
+
     const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  
+
     if (!items.length || isNaN(total)) {
       alert('Hay un problema con los ítems del carrito.');
       return;
     }
-  
+
     const order = {
       user: {
         nombre: formData.name,
@@ -46,14 +48,30 @@ const Checkout = () => {
       fecha: new Date(),
       estado: 'generada'
     };
-  
+
     try {
       const id = await saveOrder(order);
+      setOrderId(id);
       clearCart();
-      navigate(`/order-success/${id}`); // Redirigir a OrderSuccess con el orderId
+      navigate(`/order-success/${id}`);
     } catch (error) {
       console.error('Error al guardar la orden:', error);
     }
+  };
+
+  if (orderId) {
+    return <h2>Gracias por tu compra. Tu número de orden es: {orderId}</h2>;
+  }
+
+  const orderPreview = {
+    user: {
+      nombre: formData.name,
+      apellido: formData.lastName,
+      email: formData.email,
+      telefono: formData.phone
+    },
+    items: cart,
+    total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
   };
 
   return (
@@ -67,6 +85,7 @@ const Checkout = () => {
         <input type="email" name="confirmEmail" placeholder="Confirmar Email" onChange={handleInputChange} required />
         <button type="submit">Realizar Compra</button>
       </form>
+      <Brief order={orderPreview} /> {/* Agrega el componente Brief */}
     </div>
   );
 };
