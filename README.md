@@ -41,7 +41,7 @@ npm run build
 
 Configuración de Firebase
 configurar Firebase con las credenciales correctas en un archivo .env:
-Se envia al privado todo lo que son credenciales por temas de seeguridad se ocoulta archivo
+Se envia al privado todo lo que son credenciales por temas de seguridad se ocoulta archivo
 
 Despliegue
 link a netlify 
