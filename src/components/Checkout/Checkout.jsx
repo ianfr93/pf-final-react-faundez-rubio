@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-import { saveOrder } from '../../services/productService'; 
+import { saveOrder } from '../../services/productService';
+import "./Checkout.css"; 
 
 const Checkout = () => {
   const { cart, clearCart } = useContext(CartContext);
@@ -18,17 +19,36 @@ const Checkout = () => {
       return;
     }
 
+    const items = cart.map(item => ({
+      id: item.id,
+      titulo: item.titulo,
+      price: item.price,
+      quantity: item.quantity
+    }));
+
+    const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    if (!items.length || isNaN(total)) {
+      alert('Hay un problema con los ítems del carrito.');
+      return;
+    }
+
     const order = {
-      buyer: formData,
-      items: cart,
-      total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
-      date: new Date(),
-      estado: 'generada',
+      user: {
+        nombre: formData.name,
+        apellido: formData.lastName,
+        email: formData.email,
+        telefono: formData.phone
+      },
+      items: items,
+      total: total,
+      fecha: new Date(),
+      estado: 'generada'
     };
 
     try {
-      const orderId = await saveOrder(order);
-      setOrderId(orderId);
+      const id = await saveOrder(order);
+      setOrderId(id);
       clearCart();
     } catch (error) {
       console.error('Error al guardar la orden:', error);

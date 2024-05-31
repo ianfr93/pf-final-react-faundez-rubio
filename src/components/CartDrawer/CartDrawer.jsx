@@ -1,24 +1,22 @@
 import React from 'react';
 import { useCart } from '../../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 import { Drawer, List, ListItem, ListItemText, ListItemAvatar, Avatar, Button, Divider, Typography, Box, IconButton } from '@mui/material';
 import { Add, Remove } from '@mui/icons-material';
 import './CartDrawer.css';
 
 const CartDrawer = () => {
   const { cart, removeFromCart, isCartOpen, toggleCart, addToCart } = useCart();
+  const navigate = useNavigate();
 
   const calculateTotal = () => {
-    return cart.reduce((acc, item) => acc + (item.quantity * (item.price || 0)), 0).toFixed(2);
+    return cart.reduce((acc, item) => {
+      const itemPrice = item.price || 0; // Asegurarse de que el precio no sea undefined
+      return acc + (item.quantity * itemPrice);
+    }, 0).toFixed(2);
   };
 
-  const calculateTaxes = (total) => (total * 0.19).toFixed(2);
-  const calculateShipping = (total) => (total > 100 ? 0 : 5).toFixed(2);
-  const calculateFinalTotal = (total, taxes, shipping) => (parseFloat(total) + parseFloat(taxes) + parseFloat(shipping)).toFixed(2);
-
   const total = calculateTotal();
-  const taxes = calculateTaxes(total);
-  const shipping = calculateShipping(total);
-  const finalTotal = calculateFinalTotal(total, taxes, shipping);
 
   return (
     <Drawer anchor="right" open={isCartOpen} onClose={toggleCart}>
@@ -37,7 +35,7 @@ const CartDrawer = () => {
                 </ListItemAvatar>
                 <ListItemText 
                   primary={item.titulo} 
-                  secondary={`${item.quantity} x $${(item.price || 0).toFixed(2)}`} 
+                  secondary={`${item.quantity} x $${(item.price ? item.price.toFixed(2) : '0.00')}`} 
                 />
                 <Box className="cart-item-controls">
                   <IconButton onClick={() => addToCart(item, -1)}>
@@ -57,11 +55,13 @@ const CartDrawer = () => {
         </List>
         <Divider />
         <Box className="cart-summary">
-          <Typography variant="h6">Subtotal: ${total}</Typography>
-          <Typography variant="body2">Impuestos: ${taxes}</Typography>
-          <Typography variant="body2">Envío: ${shipping}</Typography>
-          <Typography variant="h6">Total: ${finalTotal}</Typography>
-          <Button variant="contained" color="primary" className="checkout-button">
+          <Typography variant="h6">Total: ${total}</Typography>
+          <Button 
+            variant="contained" 
+            color="primary" 
+            className="checkout-button"
+            onClick={() => navigate('/checkout')}
+          >
             Proceder al pago
           </Button>
         </Box>
@@ -71,3 +71,4 @@ const CartDrawer = () => {
 };
 
 export default CartDrawer;
+
