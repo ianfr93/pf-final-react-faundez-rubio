@@ -8,7 +8,46 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-"Proyecto e-commerce Tecnoventas: tienda de artículos electrónicos. Se crean 20 productos en un firebase se crean los products y las orders con sus item automaticos La página es funcional; se puede navegar y buscar productos en la barra del buscador se puede ingresar con google el usuario vinculado al firebase. Al presionar el título de la tarjeta, redirige a ItemDetail muestra imagenes carga tabla con info. Se agrega footer y estilos CSS un carrousel de imagenes. Se crean todos los componentes necesarios y se ajustan las rutas. Se agrega la lógica adecuada para su funcionamiento. se puede efectuar la compra muestra los detalles se agrega un css mas completo y queda todo mas profesional"
+Proyecto E-commerce Tecnoventas
+Tecnoventas es una tienda de artículos electrónicos creada como proyecto final para el curso de React JS. Esta aplicación permite a los usuarios navegar, buscar y comprar productos de manera intuitiva y eficiente.
 
+Funcionalidades
+-Navegación: Barra de navegación con acceso a categorías y carrito.
+-Catálogo de Productos: Lista de productos disponibles con filtros por categoría.
+-Detalle del Producto: Página de detalle con descripción, imágenes y selector de cantidad.
+-Carrito de Compras: Vista compacta del carrito con precios totales y opción de modificar cantidades.
+-Checkout: Formulario de compra con validación de datos y confirmación de pedido.
+-Autenticación: Inicio de sesión con Google vinculado a Firebase.
+-Carousel de Imágenes: Carrusel en la página de detalles del producto.
+
+Tecnologías Utilizadas
+-React: Framework principal para la creación de componentes y gestión del estado.
+-Vite: Herramienta de desarrollo rápida con soporte para HMR.
+-Firebase: Base de datos en tiempo real para la gestión de productos y órdenes.
+-CSS: Estilos personalizados para una apariencia profesional.
+
+Instalación y Uso
+1- Clona el repositorio:
+git clone https://github.com/ianfr93/pf-final-react-faundez-rubio.git
+
+2- Instala las dependencias:
+npm install
+
+3- Ejecuta la aplicación en modo desarrollo:
+npm run dev
+
+4-Compila la aplicación para producción:
+npm run build
+
+Configuración de Firebase
+configurar Firebase con las credenciales correctas en un archivo .env:
+Se envia al privado todo lo que son credenciales por temas de seeguridad se ocoulta archivo
+
+Despliegue
 link a netlify 
 https://tecnoventas.netlify.app/
+
+link a youtube Muestra del proceso de la compra
+https://www.youtube.com/watch?v=fH4sEHJY9qg
+
+
