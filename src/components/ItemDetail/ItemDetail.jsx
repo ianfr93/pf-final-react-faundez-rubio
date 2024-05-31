@@ -71,7 +71,7 @@ function ItemDetail({ product }) {
             <FontAwesomeIcon icon={faUndo} /> 30 días de devolución
           </div>
           <div className="item-detail-social">
-            <span>compartir:</span>
+            <span>Compartir:</span>
             <FontAwesomeIcon icon={faFacebook} />
             <FontAwesomeIcon icon={faTwitter} />
             <FontAwesomeIcon icon={faInstagram} />
